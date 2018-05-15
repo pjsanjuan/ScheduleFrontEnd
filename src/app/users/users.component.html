@@ -1,0 +1,8 @@
+<app-component-header name="Users"></app-component-header>
+<div fxLayout="column wrap" fxLayoutGap="5px" fxLayoutAlign="space-evenly" class="user-list">
+  <mat-card *ngFor="let user of users">
+    <mat-card-title routerLink="/users/{{user.id}}">
+      {{user.first_name}}
+    </mat-card-title>
+  </mat-card>
+</div>

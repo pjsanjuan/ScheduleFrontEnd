@@ -1,0 +1,38 @@
+<p>
+  <mat-card>
+    <mat-card-title>{{user.first_name + ' ' + user.last_name}}</mat-card-title>
+    <mat-card-content>
+      <mat-tab-group>
+        <!--Profile Tab-->
+        <mat-tab label="Profile">
+          <mat-list>
+            <mat-list-item>
+              <span fxFlex="200px"><strong>User ID</strong></span> {{user.id}}
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <span fxFlex="200px"><strong>First Name</strong></span> {{user.first_name}}
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <span fxFlex="200px"><strong>Last Name</strong></span> {{user.last_name}}
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <span fxFlex="200px"><strong>Email</strong></span> {{user.email}}
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <button mat-raised-button color="primary" (click)="openDialog()">Edit</button>
+            </mat-list-item>
+          </mat-list>
+
+        </mat-tab>
+        <!--Shifts Tab-->
+        <mat-tab label="Shifts">
+
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</p>

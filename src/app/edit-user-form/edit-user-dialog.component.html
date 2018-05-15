@@ -1,0 +1,17 @@
+<!--Editing Pane -->
+<form style="padding-top: 20px; padding-bottom: 20px"
+      fxLayout="column" fxLayoutAlign="space-around">
+  <mat-form-field class="med-font">
+    <input matInput placeholder="First Name" name="first_name" [(ngModel)]="user.first_name">
+  </mat-form-field>
+
+  <mat-form-field class="med-font">
+    <input matInput placeholder="Last Name" name="last_name" [(ngModel)]="user.last_name">
+  </mat-form-field>
+
+  <mat-form-field class="med-font">
+    <input matInput placeholder="Email" name="email" [(ngModel)]="user.email">
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" color="primary">Save</button>
+</form>
