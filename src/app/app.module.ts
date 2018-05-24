@@ -8,7 +8,6 @@ import {UsersComponent} from './users/users.component';
 import {UsersService} from './users.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {ComponentHeaderComponent} from './component-header/component-header.component';
 import {AppRouterModule} from './/app-router.module';
 import {SchedulerComponent} from './scheduler/scheduler.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -23,7 +22,6 @@ import {InMemoryDataService} from './InMemoryDataService';
   declarations: [
     AppComponent,
     UsersComponent,
-    ComponentHeaderComponent,
     SchedulerComponent,
     DashboardComponent,
     UserProfileComponent,
@@ -40,7 +38,10 @@ import {InMemoryDataService} from './InMemoryDataService';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false, delay: 1000})
   ],
   providers: [UsersService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    EditUserDialogComponent
+  ]
 })
 export class AppModule {
 }

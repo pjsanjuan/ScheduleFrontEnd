@@ -10,13 +10,16 @@ import {User} from '../user';
 export class UsersComponent implements OnInit {
 
   users: User[];
+  loading = false;
 
   constructor(private userService: UsersService) {
   }
 
   ngOnInit() {
+    this.loading = true;
     this.userService.getUsers().subscribe(users => {
       this.users = users;
+      this.loading = false;
     });
   }
 }

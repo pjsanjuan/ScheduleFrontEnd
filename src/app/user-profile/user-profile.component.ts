@@ -16,6 +16,7 @@ export class UserProfileComponent implements OnInit {
 
   user: User;
   savingUser = false;
+  loading = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,28 +31,28 @@ export class UserProfileComponent implements OnInit {
   }
 
   refreshUser() {
+    this.loading = true;
     const id = +this.route.snapshot.paramMap.get('id');
     this.userService.getUser(id).subscribe(user => {
       this.user = user;
+      this.loading = false;
     });
   }
 
-  openDialog() {
+  openDialog(): void {
     const dialogRef = this.dialog.open(EditUserDialogComponent, {
-      data: {
-        user: this.user
-      }
+      data: _.clone(this.user)
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (!_.isEqual(this.user, result)) {
-        // TODO: send request
+        this.updateUser();
       }
     });
   }
 
   updateUser() {
-    // TODO: savingUser = true; For displaying a loading icon
+    this.loading = true;
     // TODO: this.userService.updateUser(this.user); Should return a promise/observable
     // TODO: upon receiving a result, savingUser = false.
   }

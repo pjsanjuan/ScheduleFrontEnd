@@ -4,8 +4,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-edit-user-form',
-  templateUrl: './edit-user-dialog.component.html',
-  styleUrls: ['./edit-user-dialog.component.css']
+  templateUrl: './edit-user-dialog.component.html'
 })
 export class EditUserDialogComponent implements OnInit {
 
@@ -18,7 +17,11 @@ export class EditUserDialogComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this.data;
   }
 
+  onCancel() {
+    this.dialogRef.close();
+  }
 
 }
